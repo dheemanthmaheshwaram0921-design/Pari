@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>For Pari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Desktop-mode nudge for mobile -->
+<div id="desktopNudge" class="desktop-nudge">
+  For the best experience, please enable <strong>Desktop mode</strong> in your browser and refresh the page. 💗
+  <button id="dismissNudge" aria-label="Dismiss">✕</button>
+</div>
+
+<div id="app">
+
+  <!-- STEP 1: Hello There -->
+  <section class="step" id="step-hello">
+    <div class="hello-wrap">
+      <h1 class="hello-text">HELLO THERE</h1>
+    </div>
+  </section>
+
+  <!-- STEP 2: Start -->
+  <section class="step" id="step-start">
+    <div class="start-wrap">
+      <button class="start-text" id="startBtn">Start?</button>
+    </div>
+    <div class="purple-overlay" id="purpleOverlay">
+      <span class="purple-text">Alright, cool</span>
+    </div>
+  </section>
+
+  <!-- STEP 3: Password gate -->
+  <section class="step" id="step-password">
+    <div class="password-card" id="passwordCard">
+      <div class="lock-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="10.5" width="16" height="10" rx="3" fill="url(#lockGrad)"/>
+          <path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3" stroke="url(#lockGrad)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="15.2" r="1.6" fill="#fff"/>
+          <defs>
+            <linearGradient id="lockGrad" x1="4" y1="4" x2="20" y2="21" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#8ecbff"/>
+              <stop offset="1" stop-color="#5b8def"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <p class="password-label">Please enter the password<br><span class="queen-name">queen Pari</span></p>
+      <p class="password-hint">the password is your birthday <em>(day/month/year)</em></p>
+      <div class="password-input-row">
+        <input type="text" id="passwordInput" class="password-input" placeholder="DD/MM/YYYY" inputmode="numeric" autocomplete="off" />
+        <button id="enterBtn" class="enter-btn" aria-label="Enter">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12h13M13 6l6 6-6 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <p class="password-error" id="passwordError">that's not quite it... try again 🥺</p>
+    </div>
+  </section>
+
+  <!-- STEP 4: Pink cloud interstitial -->
+  <section class="step" id="step-interstitial">
+    <div class="cloud-field" id="cloudField"></div>
+    <div class="emoji-field" id="emojiField"></div>
+    <button class="ready-text" id="readyBtn">Ready?</button>
+  </section>
+
+  <!-- STEP 5: placeholder handoff to Day 2 build -->
+  <section class="step" id="step-placeholder">
+    <p class="placeholder-text">Day 2 continues here 💗</p>
+  </section>
+
+</div>
+
+<!-- Blur transition overlay used between steps -->
+<div id="blurTransition" class="blur-transition"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
